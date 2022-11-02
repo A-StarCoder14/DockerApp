@@ -7,20 +7,13 @@ services:
     build: .
     ports:
       - 5500:5500
-    links:
+    external_links:
       - mongo
-    environment:
-      - MONGOURL=mongodb://mongo/docker-deploy
 
   mongo:  
     container_name: mongo
     image: mongo
     ports:
       - 27017:27017
-    volumes:
-      - vidly:/data/db
-
-volumes:
-  vidly: 
 
 
